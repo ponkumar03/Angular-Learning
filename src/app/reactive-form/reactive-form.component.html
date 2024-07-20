@@ -1,0 +1,106 @@
+<section class="form my-5">
+    <div class="container">
+        <form class="row g-3" [formGroup]="contactForm" (submit)="onSubmit()">
+            <div class="col-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" formControlName="firstName">
+                <span *ngIf="!firstname?.valid && (firstname?.touched || firstname?.dirty)">
+                    <span  class="text-danger" *ngIf="firstname?.errors?.['required']">
+                      firstName is required
+                    </span>
+                    <span  class="text-danger" *ngIf="firstname?.errors?.['minlength']">
+                      Minimum length is required
+                    </span>
+                </span>
+            </div>
+            <div class="col-6">
+                <label for="lasteName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lasteName" name="lasteName" formControlName="lasteName">
+                <span *ngIf="!lastname?.valid && (lastname?.touched || lastname?.dirty)">
+                  <span  class="text-danger" *ngIf="lastname?.errors?.['required']">
+                    lastName is required
+                  </span>
+              </span>
+            </div>
+            <div class="col-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" formControlName="email">
+              <span *ngIf="!email?.valid && (email?.touched || email?.dirty)">
+                <span  class="text-danger" *ngIf="email?.errors?.['required']">
+                  Email is required
+                </span>
+              </span>
+            </div>
+            <div class="col-6">
+                <div class="form-check">
+                    <label class="form-check-label" for="gender">
+                        Gender
+                      </label> <br>
+                    <div class="d-flex gap-5">
+                      <div>
+                        <input class="form-check-input" type="radio" value="male" id="gender" name="gender" formControlName="gender"> Male
+                      </div>
+                    <div>
+                      <input class="form-check-input" type="radio" value="female" id="gender" name="gender" formControlName="gender"> Female
+                    </div>
+                    </div>
+                    <span *ngIf="!gender?.valid && (gender?.touched || gender?.dirty)">
+                      <span  class="text-danger" *ngIf="gender?.errors?.['required']">
+                        Gender is required
+                      </span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck" name="gridCheck" formControlName="girdCheck">
+                  <label class="form-check-label" for="gridCheck">
+                    Check me out
+                  </label>
+                  <span *ngIf="!checkme?.valid && (checkme?.touched || checkme?.dirty)">
+                    <span  class="text-danger" *ngIf="checkme?.errors?.['required']">
+                      Accept is required
+                    </span>
+                  </span>
+                </div>
+              </div>
+            <div class="col-6">
+              <label for="country" class="form-label">Country</label>
+              <select name="country" id="country" class="form-select" formControlName="country">
+                <option value="1">India</option>
+                <option value="2">USA</option>
+                <option value="3">England</option>
+                <option value="4">America</option>
+              </select>
+              <span *ngIf="!country?.valid && (country?.touched || country?.dirty)">
+                <span  class="text-danger" *ngIf="country?.errors?.['required']">
+                  country is required
+                </span>
+              </span>
+            </div>
+            <div class="row g-3" formGroupName="address">
+              <div class="col-6">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city" formControlName="city">
+                <span *ngIf="!city?.valid && (city?.touched || city?.dirty)">
+                  <span  class="text-danger" *ngIf="city?.errors?.['required']">
+                    city is required
+                  </span>
+                </span>
+            </div>
+              <div class="col-6">
+                <label for="street" class="form-label">Street</label>
+                <input type="text" class="form-control" id="street" name="street" formControlName="street">
+                <span *ngIf="!street?.valid && (street?.touched || street?.dirty)">
+                  <span  class="text-danger" *ngIf="street?.errors?.['required']">
+                    street is required
+                  </span>
+                </span>
+            </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+            </div>
+          </form>
+    </div>
+</section>

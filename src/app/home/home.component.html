@@ -1,0 +1,93 @@
+<section class="first-section pt-5">
+    <div class="container">
+        <h1>{{title}}</h1>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <ul>
+                    <li *ngFor = "let movie of movie">
+                        {{movie}}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="list-of-movies">
+                    <div class="table-responsive">
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Title</th>
+                                    <th>Director</th>
+                                    <th>Language</th>
+                                    <th>Release Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                [ngClass]='{"bg-success":o, "bg-danger":e, "bg-warning":f, "bg-info":l}'
+                                 *ngFor = "let list of movies; let i=index, let o=odd, let e=even, let f=first, let l=last">
+                                    <td>{{i+1}}</td>
+                                    <td>{{list.title}}</td>
+                                    <td>{{list.director}}</td>
+                                    <td>{{list.language}}</td>
+                                    <td>{{list.releaseDate}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="switchcase-section">
+    <div class="container">
+        <h2>Switchcase Directive</h2>
+        
+        <label for="">Type number</label>
+        <input type="text" [(ngModel)]="num">
+
+        <div [ngSwitch]="num">
+            <div *ngSwitchCase="1">one</div>
+            <div *ngSwitchCase="2">two</div>
+            <div *ngSwitchCase="3">three</div>
+        </div>
+    </div>
+</section>
+<section class="switchcase-section">
+    <div class="container">
+        <h2>ngIF Directive</h2>
+        
+        <div class="d-block">
+            <label for="">condition checking</label>
+        <input type="checkbox" [(ngModel)]="showMe">
+        </div>
+
+        <div *ngIf="showMe;then content else other_content">here is ignored</div>
+            <ng-template #content>content here...</ng-template>
+            <ng-template #other_content>other content here...</ng-template>
+
+        <h2>Style Attribute</h2>
+            <input type="text" name="" [(ngModel)]="color">
+            <div [ngStyle]="{'color':color}">type your color</div>
+
+        <h2>Date Pipes</h2>
+        <p>unformating pipe{{toDate}}</p>    
+
+
+        <!-- Event Binding -->
+        <h2>Event Binding</h2>
+        <p>click event</p>
+        <div class="d-flex align-items-center gap-3">
+            <button (click)="click()">Add count</button>
+            <p class="m-0">Total count{{clickCount}}</p>
+            <button (click)="click1()">Reduce count</button>
+        </div>
+        <p></p>
+        <p class="m-0">input event</p>
+         <p>Type here:</p><input type="text" (input)="handleInput($event); value1=$any($event.target).value">
+         <p>With Handle input function:{{value}}</p>
+         <p>Withuot Handle input function:{{value1}}</p>
+    </div>
+</section>

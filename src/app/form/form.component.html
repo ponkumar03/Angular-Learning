@@ -1,0 +1,14 @@
+<section class="form-list pt-5">
+    <div class="container">
+        <h3>Form Componet</h3>
+
+        <form action="">
+            <label for="carname">Car Names</label>
+            <input type="text" name="carname" [(ngModel)]="carName"> <br>
+            <button type="submit" (click)="addCar()">submit</button>
+        </form>
+        <br>
+        <br>
+        <app-list [carsInput]="cars"></app-list>
+    </div>
+</section>

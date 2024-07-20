@@ -1,0 +1,20 @@
+<section class="list-section">
+    <div class="container">
+            <!-- <app-form (carAdded)="carDataAdded($event)"></app-form> -->
+<br>
+<br>
+            <h4>List Component</h4>
+
+            <h5>Cars List</h5>
+            <div *ngIf="cars.length>0; then carsList; else noData"></div>
+
+            <ng-template #carsList>
+                <ul>
+                    <li *ngFor="let carName of cars">{{carName}}</li>
+                </ul>
+            </ng-template>
+            <ng-template #noData>
+                <p>No Data Availabel</p>
+            </ng-template>
+    </div>
+</section>
