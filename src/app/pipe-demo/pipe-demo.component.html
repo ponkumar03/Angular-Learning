@@ -1,0 +1,58 @@
+<section class="pipe-section">
+    <div class="container">
+        <div class="my-4">
+            <p>Date pipe</p>
+            <p>{{day}}</p>
+            <p>{{ day | date }}</p>  
+            <p>{{ day | date:'dd-mm-yyyy' }}</p>
+            <p>{{ day | date:'medium' }}</p>
+            <p>{{ day | date:'shortTime' }} </p>
+        </div>
+        <div class="my-4">
+            <p>number pipe</p>
+            <p>number with pipe {{num | number: '.3-4'}}</p>
+        </div>
+        <div class="my-4">
+            <p>percentage pipe</p>
+            <p>percentage with pipe {{num1 | percent}}</p>
+            <p>percentage with pipe {{num1 | percent: '2.3'}}</p>
+        </div>
+        <div class="my-4">
+            <p>currency pipe</p>
+            <p>currency with pipe {{num | currency}}</p>
+            <p>currency with pipe {{num | currency:'INR'}}</p>
+        </div>
+        <div class="my-4">
+            <p>Lowercase and Uppercase and Titlecase pipe</p>
+            <p>Lowercase with pipe {{name | lowercase}}</p>
+            <p>Uppercase with pipe {{name | uppercase}}</p>
+            <p>Uppercase with pipe {{name | titlecase}}</p>
+        </div>
+        <div class="my-4">
+            <p>Json pipe</p>
+            <p>Json with pipe {{obj | json}}</p>
+        </div>
+        <div class="my-4">
+            <p>Slice pipe</p>
+            <p>Slice with pipe {{num2 | slice:0-3}}</p>
+        </div>
+        <div class="my-4">
+            <p>Keyvalue pipe</p>
+            <p>this pipe very full convert array obj into keyvalue for ngFor method</p>
+            <p>Keyvalue with pipe {{obj | keyvalue | json}}</p>
+        </div>
+
+        <div class="my-4">
+            <p>Custom pipe</p>
+
+            <input type="text" [(ngModel)]="value" #userInput>
+            <button (click)="addusers(userInput.value)">Add users</button>
+            <br>
+            <br>
+            <p>{{'Raj' | append:'kumar'}}</p>
+            <div *ngFor="let user of users | filter:'gender':'m'">
+                {{user.name}}
+            </div>
+        </div>
+    </div>
+</section>

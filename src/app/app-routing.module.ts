@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'user-list', component: UserListComponent,
+  },
+  {
+    path: 'pipe', component: PipeDemoComponent
   }
 ];
 

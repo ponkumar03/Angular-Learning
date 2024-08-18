@@ -10,6 +10,8 @@ import { ListComponent } from './list/list.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { HttpClientModule} from '@angular/common/http';
 import { UserListComponent } from './user-list/user-list.component';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { AppendPipe, FilterPipe } from './data,pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,10 @@ import { UserListComponent } from './user-list/user-list.component';
     FormComponent,
     ListComponent,
     ReactiveFormComponent,
-    UserListComponent
+    UserListComponent,
+    PipeDemoComponent,
+    AppendPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
