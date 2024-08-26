@@ -5,6 +5,7 @@ import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'pipe', component: PipeDemoComponent
+  },
+  {
+    path: 'template-driven-form', component: TemplateDrivenFormComponent
   }
 ];
 

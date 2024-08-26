@@ -12,6 +12,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { UserListComponent } from './user-list/user-list.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { AppendPipe, FilterPipe } from './data,pipe';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +23,15 @@ import { AppendPipe, FilterPipe } from './data,pipe';
     UserListComponent,
     PipeDemoComponent,
     AppendPipe,
-    FilterPipe
+    FilterPipe,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

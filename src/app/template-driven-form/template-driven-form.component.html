@@ -1,0 +1,65 @@
+<section class="form my-5">
+  <div class="container">
+    <h2>Template Driven Form works!</h2>
+    <form class="row g-3" #contactForm="ngForm" (submit)="onSubmit(contactForm)">
+      <div class="col-6">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" #firstname="ngModel" id="firstName" name="firstName" [(ngModel)]="contact.firstName" required minlength="6">
+        <span *ngIf="!firstname?.valid && (firstname?.touched || firstname?.dirty)">
+          <span class="text-danger" *ngIf="firstname.errors?.['minlength']">
+            Firstname is minlength
+          </span>
+          <span class="text-danger" *ngIf="firstname.errors?.['required']">
+            Firstname is required
+          </span>
+        </span>
+      </div>
+      <div class="col-6">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="contact.lastName" required>
+      </div>
+      <div class="col-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="contact.email" required>
+      </div>
+      <div class="col-6">
+        <div class="form-check">
+          <label class="form-check-label" for="gender">Gender</label> <br>
+          <div class="d-flex gap-5">
+            <div>
+              <input class="form-check-input" type="radio" value="male" id="gender" name="gender" [(ngModel)]="contact.gender" required> Male
+            </div>
+            <div>
+              <input class="form-check-input" type="radio" value="female" id="gender" name="gender" [(ngModel)]="contact.gender" required> Female
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" name="gridCheck" [(ngModel)]="contact.gridCheck" required>
+          <label class="form-check-label" for="gridCheck">Check me out</label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="cities" class="form-label">Select your City</label>
+        <select name="cities" id="cities" class="form-select" [(ngModel)]="contact.cities" required>
+          <option *ngFor="let city of cities" [ngValue]="city.id">{{ city.name }}</option>
+        </select>
+      </div>
+      <div class="row g-3">
+        <div class="col-6">
+          <label for="country" class="form-label">Country</label>
+          <input type="text" class="form-control" id="country" name="country" [(ngModel)]="contact.country" required>
+        </div>
+        <div class="col-6">
+          <label for="street" class="form-label">Street</label>
+          <input type="text" class="form-control" id="street" name="street" [(ngModel)]="contact.street" required>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
