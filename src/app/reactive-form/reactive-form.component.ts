@@ -40,9 +40,9 @@ export class ReactiveFormComponent implements OnInit {
       city: new FormControl('', [Validators.required]),
       street: new FormControl('', [Validators.required]),
     }),
-    skills: new FormArray([
-      new FormControl('', [Validators.required])
-    ])  // Added FormArray for skills
+    // skills: new FormArray([
+    //   new FormControl('', [Validators.required])
+    // ])  // Added FormArray for skills
   });
 
   // Accessor methods for form controls
@@ -56,24 +56,24 @@ export class ReactiveFormComponent implements OnInit {
   get street() { return this.contactForm.get('address')?.get('street'); }
   get dob() { return this.contactForm.get('dob'); }
   get image() { return this.contactForm.get('image'); }
-  get skills(): FormArray { return this.contactForm.get('skills') as FormArray; }
+  // get skills(): FormArray { return this.contactForm.get('skills') as FormArray; }
 
   // Method to create a new skill form group
-  newSkill(): FormGroup {
-    return new FormGroup({
-      skill: new FormControl('', Validators.required)
-    });
-  }
+  // newSkill(): FormGroup {
+  //   return new FormGroup({
+  //     skill: new FormControl('', Validators.required)
+  //   });
+  // }
 
   // Method to add a skill form group to the skills array
-  addSkills() {
-    this.skills.push(this.newSkill());
-  }
+  // addSkills() {
+  //   this.skills.push(this.newSkill());
+  // }
 
   // Method to remove a skill form group from the skills array
-  removeSkill(i: number) {
-    this.skills.removeAt(i);
-  }
+  // removeSkill(i: number) {
+  //   this.skills.removeAt(i);
+  // }
 
   onFileChange(event: any) {
     const file = event.target.files[0];

@@ -1,5 +1,40 @@
+<h2>Users List Form</h2>
+<form action="" method="post" [formGroup]="userForm" (submit)="onSubmit()">
+    <div>
+        <label for="id" class="form-label">User Id: </label>
+    <input type="number" id="id" name="id" formControlName="id">
+    </div>
+    <div>
+        <label for="name" class="form-label">Name: </label>
+    <input type="text" id="name" name="name" formControlName="name">
+    </div>
+    <div>
+        <label for="email" class="form-label">Email: </label>
+    <input type="text" id="email" name="email" formControlName="email"> 
+    </div>      
+     <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
 <h3>Users List</h3>
 
-<ul>
+<!-- <ul>
     <li *ngFor="let user of users">{{user.name}}</li>
-</ul>
+</ul> -->
+<table>
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td><button (click)="onEdit(user)">edit</button></td>
+            <td><button (click)="onDelete(user.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

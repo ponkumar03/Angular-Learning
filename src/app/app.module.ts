@@ -13,6 +13,10 @@ import { UserListComponent } from './user-list/user-list.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { AppendPipe, FilterPipe } from './data,pipe';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,11 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     PipeDemoComponent,
     AppendPipe,
     FilterPipe,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    NavbarComponent,
+    RegisterComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

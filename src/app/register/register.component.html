@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<div class="container">
+
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-6">
+            <h1 class="py-5 text-center">Register</h1>
+        <form [formGroup]="registerForm" (submit)="onSubmit()">
+                
+            <div>
+                <label for="username"><b>Name</b></label>
+                <input type="text" class="form-control" placeholder="Enter your name" name="username" id="username" formControlName="username">
+                <span class="text-danger" *ngIf="!name?.valid && name?.touched">
+                    <span *ngIf="name?.errors?.['required']">Name is required</span>
+                </span>
+            </div>
+
+            <div>
+                <label for="email"><b>Email</b></label>
+                <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" formControlName="email">
+                <span class="text-danger" *ngIf="!email?.valid && email?.touched">
+                    <span *ngIf="email?.errors?.['required']">Email is required</span>
+                </span>
+            </div>
+            <div>
+                <label for="Password"><b>Password</b></label>
+                <input type="password" class="form-control" placeholder="Enter Password" name="Password" id="Password" formControlName="password">
+                <span class="text-danger" *ngIf="!password?.valid && password?.touched">
+                    <span *ngIf="password?.errors?.['required']">Password is required</span>
+                </span>
+            </div>
+            <div>
+                <span class="text-danger" *ngIf="this.errorMessage">
+                    <p [innerText]="this.errorMessage"></p>
+                </span>
+            </div>
+            <div class="text-center" *ngIf="this.loading">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            
+            <button type="submit" class="registerbtn" [disabled]="!registerForm.valid || this.loading">Register</button>
+        
+            <div class="signin py-5">
+            <p>Already have an account? <a routerLink="/login">Login</a>.</p>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   // ngIF case
   showMe ='true';
-  constructor() { }
+  constructor(private auth:AuthService) { }
 
   // ngStyle
   color ='red'; 
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit {
   toDate = new Date();
 
   ngOnInit(): void {
+    // this.auth.canAccess();
   }
 
   // Event Binding

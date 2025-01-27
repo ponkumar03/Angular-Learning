@@ -6,13 +6,24 @@ import { ListComponent } from './list/list.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
+  { path: 'register', component: RegisterComponent},
+   {
+    path: 'login', component: LoginComponent
+   },
+   {
+    path: 'dashboard', component: DashboardComponent,
+  },
   {
     path: 'home', component: HomeComponent,
   },
   {
-    path: 'form', component: FormComponent,
+    path: 'form', component: ReactiveFormComponent,
   },
   {
     path: 'list', component: ListComponent,
